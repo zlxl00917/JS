@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>글자 수 세기</h1>
+    <textarea id="text" rows="20" cols="50"></textarea>
+    <p>공백 포함 글자 수 : <span id="len1"></span></p>
+    <p>공백 제외 글자 수: <span id="len2"></span></p>
+</body>
+<script>
+    const text = document.querySelector('#text')
+    const len1= document.querySelector('#len1')
+    const len2 =document.querySelector('#len2')
+
+    function len(event){
+        let inputValue=''
+        inputValue= event.target.value;
+        len1.textContent = inputValue.length
+        len2.textContent = inputValue.replace(/ /g,"").length
+    }
+    text.addEventListener('keydown',len)
+        
+</script>
+
+
+</html>
